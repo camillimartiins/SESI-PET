@@ -140,4 +140,4 @@ export default function Cadastro() {
       </TouchableOpacity>
     </View>
   );
-}
+}''
