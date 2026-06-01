@@ -1,9 +1,6 @@
 import {createStackNavigator} from '@react-navigation/stack';
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 //import das telas
@@ -21,6 +18,7 @@ const Draw = createDrawerNavigator();
 
 
 function abasInferiores(){
+    return(
     <Tabs.Navigator
     screenOptions={({route}) => ({
         headerShown: true,
@@ -35,17 +33,18 @@ function abasInferiores(){
             if(route.name === 'profissionais'){
                 nomeIcone = focused ? 'people' : 'people-outline'
             }
-            return <Ionicon name={nomeIcone} size={size} color={color}/>
+            return <Ionicons name={nomeIcone} size={size} color={color}/>
         }
     })}>
     <Tabs.Screen name='atendimentos' component={<Atendimento />}/>
     <Tabs.Screen name='profissionais' component={<Profissionais />}/>
-    </Tabs.Navigator>
+    </Tabs.Navigator>)
 }
 
 
 
 function menuSuperior(){
+    return(
     <Draw.Navigator
     screenOptions={({route}) => ({
         headerShown: true,
@@ -66,7 +65,7 @@ function menuSuperior(){
     <Draw.Screen name='inicio' component={<abasInferiores />}/>
     <Draw.Screen name='atendimentos' component={<Atendimento />}/>
     <Draw.Screen name='profissionais' component={<Profissionais />}/>
-    </Draw.Navigator>
+    </Draw.Navigator>)
 }
 
 export default function Rotas(){

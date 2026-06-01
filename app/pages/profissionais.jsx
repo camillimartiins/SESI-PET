@@ -19,3 +19,12 @@ export default function ProfissionaisScreen() {
     </View>
   );
 }
+
+const estilos = StyleSheet.create({
+  card:{
+
+  },
+  nome:{
+    
+  }
+})
